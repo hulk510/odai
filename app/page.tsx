@@ -108,27 +108,22 @@ export default function Home() {
         >
           送信
         </button>
-        <button type="button" className="... bg-indigo-500" disabled>
+        {/* <button type="button" className="... bg-indigo-500" disabled>
           <svg className="... mr-3 h-5 w-5 animate-spin" viewBox="0 0 24 24">
             {' '}
             indicator{' '}
           </svg>
           Processing...
-        </button>
+        </button> */}
       </form>
       {/* TODO: ローディング中は表示せず、responseが来てloadingが終わったら下からふわっと表示する */}
       {/* TODO: ローディング中はGPTで作ったローディング中みたいな画像表示させておく */}
-      <div className="mx-4 flex h-32 w-full flex-col items-center justify-center space-y-2 rounded-md bg-red-300 shadow-md">
-        <div className="flex flex-col space-y-1">
-          <h2 className="font-serif text-2xl font-bold">
-            お題: {message?.topic}
-          </h2>
-          <p className="px-8 font-serif text-lg font-bold">
-            回答1: {message?.choice1}
-          </p>
-          <p className="px-8 font-serif text-lg font-bold">
-            回答2: {message?.choice2}
-          </p>
+      <div className="mx-4 flex w-full flex-col items-center justify-center space-y-2 rounded-md bg-green-400 py-16 shadow-md">
+        <div className="flex flex-col items-center space-y-1 text-white">
+          <h3 className="font-serif text-lg">お題</h3>
+          <h2 className="text-3xl font-bold">{message?.topic}</h2>
+          <p className="px-8 text-lg font-bold">回答1: {message?.choice1}</p>
+          <p className="px-8 text-lg font-bold">回答2: {message?.choice2}</p>
         </div>
       </div>
     </main>
